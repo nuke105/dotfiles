@@ -16,29 +16,39 @@ Plug 'godlygeek/tabular'
 
 call plug#end()
 
-filetype plugin on
 set nocompatible
+filetype plugin on
+syntax on
 
 " colorscheme dracula
 colorscheme molokai
 " colorscheme vim-monokai-tasty
 
 set history=200
+
 set nu
 set rnu
+
 set encoding=utf-8
-syntax on
+
 set wildmenu
 set incsearch
 set hlsearch
+
 set ruler
 set showcmd
+
 set splitbelow
 set splitright
+
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
 set hidden
+
+set undofile
+set undodir=~/.vim/undodir
 
 "movement in split panes
 map <C-h> <C-w>h
@@ -49,12 +59,6 @@ map <C-l> <C-w>l
 "man pages in vim
 runtime ftplugin/man.vim
 let g:ft_man_open_mode = 'tab'
-
-" augroup vimrc-incsearch-highlight
-"   autocmd!
-"   autocmd CmdlineEnter /,\? :set hlsearch
-"   autocmd CmdlineLeave /,\? :set nohlsearch
-" augroup END
 
 "Search for the Current Selection
 xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
